@@ -1,25 +1,25 @@
 package generadores;
 
+import java.util.ArrayList;
+
 public class GeneradorLetra extends Generador {
 	
 	private String tipoIA;
 	private String contrasenaIA;
 	private String[] frases;
-	private String[] generos;
 	private Cancion cancion;
 	
-	public GeneradorLetra(String[] frases, String[] generos) {
-		this.frases = frases;
-		this.generos = generos;
-		//...
-	}
-	
 	@Override
-	public Cancion generar(Cancion cancion) {
-		String generosAsString = String.join(", ", generos);
-		//...
-		cancion.setGeneros(generosAsString);
-		cancion.setLyrics("?");
+	public Cancion generar(Cancion cancion, boolean mezclarGenero, String genero, String frases) {
+		if (mezclarGenero) {
+			// Aca se mezcla si hay otro presente
+			String aMezclar = cancion.getLyrics();
+			
+			cancion.setLyrics("Mezclado");
+		} else {
+			// Aca se sobreescribe
+			cancion.setLyrics("?");
+		}
 		return cancion;
 	};
 

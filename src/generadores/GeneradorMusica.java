@@ -12,9 +12,16 @@ public class GeneradorMusica extends Generador {
 	}
 
 	@Override
-	public Cancion generar(Cancion cancion) {
-		//...
-		//cancion.setMusic();
+	public Cancion generar(Cancion cancion, boolean mezclarGenero, String genero, String frases) {
+		if (mezclarGenero) {
+			// Aca se mezcla si hay otro presente
+			byte[] aMezclar = cancion.getMusic();
+			
+			cancion.setMusic("Mezclado");
+		} else {
+			// Aca se sobreescribe
+			cancion.setMusic("?");
+		}
 		return cancion;
 	}
 
