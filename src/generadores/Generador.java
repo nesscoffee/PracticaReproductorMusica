@@ -3,6 +3,7 @@ package generadores;
 public abstract class Generador {
 	String tipoIA;
 	String contrasenaIA;
-	public void generar() {};
-	public void cambiarIA(String tipoIA) {};
+	Cancion cancion;
+	public abstract Cancion generar(Cancion cancion);
+	public void cambiarIA(String tipoIA) {}
 }
